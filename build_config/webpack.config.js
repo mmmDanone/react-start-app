@@ -222,7 +222,7 @@ export default {
 					{
 						loader: 'file-loader',
 						options: {
-							name: 'static/media/[name]_[contenthash:5].[ext]',
+							name: 'static/media/[name]_[contenthash].[ext]',
 						}
 					},
 					{
@@ -233,6 +233,20 @@ export default {
 							optipng: {optimizationLevel: 3},
 							gifsicle: {interlaced: true},
 							svgo: {plugins: [{removeViewBox: false}, {cleanupIDs: false}]}
+						}
+					}
+				]
+			},
+			{
+				test: /\.(eot|woff2|woff|ttf)$/,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							//name: 'static/fonts/[name]_[contenthash].[ext]',
+							name: function(resourcePath, resourceQuery) {
+								return resourcePath.replace(paths.srcPath, 'static').replace(/\\/g, '/');
+							}
 						}
 					}
 				]
