@@ -18,6 +18,7 @@
 		]
 	},
 	"scripts": {
+		"update:packages": "npm update --save-dev && npm update --save",
 		"start": "cross-env NODE_ENV=development BABEL_ENV=development node build_scripts/webpack.dev.js",
 		"build": "cross-env NODE_ENV=production BABEL_ENV=production node build_scripts/webpack.prod.js"
 	},
@@ -37,7 +38,7 @@
 		"css-minimizer-webpack-plugin": "^1.1.5",
 		"file-loader": "^6.2.0",
 		"html-replace-webpack-plugin": "^2.6.0",
-		"html-webpack-plugin": "^5.0.0-alpha.14",
+		"html-webpack-plugin": "^5.0.0-alpha.15",
 		"image-webpack-loader": "^7.0.1",
 		"less": "^3.12.2",
 		"less-loader": "^7.1.0",
@@ -49,7 +50,7 @@
 		"postcss-sort-media-queries": "^2.2.14",
 		"style-loader": "^2.0.0",
 		"terser-webpack-plugin": "^5.0.3",
-		"webpack": "^5.9.0",
+		"webpack": "^5.10.0",
 		"webpack-cli": "^4.2.0",
 		"webpack-dev-middleware": "^4.0.2",
 		"webpack-dev-server": "^3.11.0"
